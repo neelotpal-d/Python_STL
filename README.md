@@ -1,6 +1,6 @@
 # Python_STL
 
-This repository contains python codes related objects stored as a binary STL file.
+This repository contains python codes related to objects stored as a binary STL file.
 
 ## plot_STL
 
