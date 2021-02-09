@@ -4,7 +4,7 @@ This repository contains python codes related to objects stored as a binary STL 
 
 ## plot_STL
 
-This is the code to display a binary STL file. Replace the value of the variable `file_name` with the name/path of your STL file
+This is the code to display the object stored in a binary STL file. Replace the value of the variable `file_name` with the name/path of your STL file
 
 
 ------------------------------
