@@ -14,7 +14,7 @@ This is the code to display the object stored in a binary STL file. Replace the 
 This is the code to slice (planar, same layer thickness) the object stored in the binary STL file in the z direction.
 Replace the `file_name` and the distance between the slices, `S`. To determine `S`, the values of `z_min` and `z_max` can be observed.
 
-*Note that this code was not written to be used to print the objects. This is just to visualise the process of slicing used in 3D printing. The current version does not include infill. However, the code can be modified to produce printable tool paths.*
+*Note that this code was not written to be used to print the objects. This is just to visualise the process of slicing used in 3D printing. The current version does not include infill and **does not produce the G codes**. However, the code can be modified to produce printable tool paths.*
 
 -------------------------------
 
