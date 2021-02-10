@@ -20,7 +20,7 @@ ax=figure.add_subplot(111,projection='3d')
 
 #########################################
 
-file_name='3d.stl'
+file_name='3dsample.stl'
 
 #########################################
 
@@ -60,9 +60,20 @@ poly3d=mplot3d.art3d.Poly3DCollection(poly)
 poly3d.set_edgecolor('green')
 ax.add_collection3d(poly3d)
 
-ax.set_xlim3d(x_min,x_max)
-ax.set_ylim3d(y_min,y_max)
-ax.set_zlim3d(z_min,z_max)
-pyplot.gca().set_aspect('equal', adjustable='box')
+x_range=x_max-x_min
+y_range=y_max-y_min
+z_range=z_max-z_min
+
+max_range=max(x_range,y_range,z_range)
+half_range=max_range/2.0
+
+x_mean=0.5*(x_max+x_min)
+y_mean=0.5*(y_max+y_min)
+z_mean=0.5*(z_max+z_min)
+
+
+ax.auto_scale_xyz([x_mean-half_range,x_mean+half_range],[y_mean-half_range,y_mean+half_range],[z_mean-half_range,z_mean+half_range])
+ax.set_aspect('equal', adjustable='box')
+
 pyplot.axis('off')
 pyplot.show()

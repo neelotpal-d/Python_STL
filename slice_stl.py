@@ -36,9 +36,9 @@ ax=figure.add_subplot(111,projection='3d')
 
 
 ##############################################
-file_name='3d.stl' #name/path of the STL file
+file_name='3dsample.stl' #name/path of the STL file
 
-S=10 #Layer gap, units
+S=1.0 #Layer gap, units
 ##############################################
 
 
@@ -253,9 +253,21 @@ le=len(slice_lines)
 for v in range(le):
     ax.plot([slice_lines[v][0][0],slice_lines[v][1][0]],[slice_lines[v][0][1],slice_lines[v][1][1]],[slice_lines[v][0][2],slice_lines[v][1][2]])
 
-
     
-pyplot.gca().set_aspect('equal', adjustable='box')
+x_range=x_max-x_min
+y_range=y_max-y_min
+z_range=z_max
+
+max_range=max(x_range,y_range,z_range)
+half_range=max_range/2.0
+
+x_mean=0.5*(x_max+x_min)
+y_mean=0.5*(y_max+y_min)
+z_mean=0.5*(z_max)
+
+ax.auto_scale_xyz([x_mean-half_range,x_mean+half_range],[y_mean-half_range,y_mean+half_range],[z_mean-half_range,z_mean+half_range])
+ax.set_aspect('equal', adjustable='box')
+
 pyplot.axis('off')
 pyplot.show()
 
